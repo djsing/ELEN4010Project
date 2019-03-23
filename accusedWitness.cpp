@@ -5,9 +5,7 @@
 class AccusedWitness : public Witness
 {
   public:
-    INJECT(AccusedWitness()) : wishesToRemainSilent_(false)
-    {
-    }
+    INJECT(AccusedWitness()) : wishesToRemainSilent_(false) {}
 
     virtual void respondToQuestion() override
     {

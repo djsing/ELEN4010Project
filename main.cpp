@@ -1,6 +1,10 @@
-#include <iostream>
+#include <fruit/fruit.h>
+#include "magistrate.h"
 
 int main()
 {
-    std::cout << "Hello" << std::endl;
+    fruit::Injector<Magistrate> injector(getMagistrateComponent);
+    Magistrate *magistrate = injector.get<Magistrate *>();
+
+    magistrate->giveVerdict();
 }
