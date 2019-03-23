@@ -11,7 +11,7 @@ struct Evidence
     INJECT(Evidence(ASSISTED(std::string) name)) : name_(name) {}
     void name()
     {
-        std::cout << name_ << std::endl;
+        std::cout << name_;
     }
 
   private:
