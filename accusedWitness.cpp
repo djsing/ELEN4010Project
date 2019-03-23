@@ -21,7 +21,7 @@ class AccusedWitness : public Witness
 
   private:
     bool wishesToRemainSilent_;
-    void remainSilent()
+    virtual void remainSilent() override
     {
         std::cout << "Accused Exercises Right to Remain Silent." << std::endl;
     }

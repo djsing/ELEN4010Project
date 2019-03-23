@@ -4,12 +4,6 @@
 
 class MagistrateImpl : public Magistrate
 {
-  private:
-    bool findsAccusedGuilty_;
-    bool jailSentence_;
-    int sentenceLength_;
-    bool agreesWithObjection_;
-
   public:
     INJECT(MagistrateImpl()) : findsAccusedGuilty_(false), jailSentence_(false), sentenceLength_(0), agreesWithObjection_(false) {}
 
@@ -39,6 +33,11 @@ class MagistrateImpl : public Magistrate
     };
 
   private:
+    bool findsAccusedGuilty_;
+    bool jailSentence_;
+    int sentenceLength_;
+    bool agreesWithObjection_;
+
     virtual std::string giveSentenceType() override
     {
         if (jailSentence_)
