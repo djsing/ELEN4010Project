@@ -9,7 +9,9 @@ private:
   Evidence *weapon_;
 
 public:
-  INJECT(ProsecutionCouncilImpl()) = default;
+  INJECT(ProsecutionCouncilImpl(ANNOTATED(ComplainantWitness, Witness *) complainant)) : complainant_(complainant)
+  {
+  }
 
   virtual void presentEvidence() override
   {
@@ -34,5 +36,5 @@ public:
 
 fruit::Component<fruit::Annotated<ProsecutionCouncil, Council>> getProsecutionCouncilComponent()
 {
-  return fruit::createComponent().bind<fruit::Annotated<ProsecutionCouncil, Council>, ProsecutionCouncilImpl>();
+  return fruit::createComponent().bind<fruit::Annotated<ProsecutionCouncil, Council>, ProsecutionCouncilImpl>().install(getComplainantWitnessComponent);
 }
