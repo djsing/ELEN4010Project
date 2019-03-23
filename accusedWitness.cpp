@@ -1,11 +1,12 @@
 #include "witness.h"
 #include <fruit/fruit.h>
 #include <iostream>
+#include "accusedWitness.h"
 
-class AccusedWitness : public Witness
+class AccusedWitnessImpl : public Witness
 {
   public:
-    INJECT(AccusedWitness()) : wishesToRemainSilent_(false) {}
+    INJECT(AccusedWitnessImpl()) : wishesToRemainSilent_(false) {}
 
     virtual void respondToQuestion() override
     {
@@ -26,3 +27,8 @@ class AccusedWitness : public Witness
         std::cout << "Accused Exercises Right to Remain Silent." << std::endl;
     }
 };
+
+fruit::Component<fruit::Annotated<AccusedWitness, Witness>> getAccusedWitnessComponent()
+{
+    return fruit::createComponent().bind<fruit::Annotated<AccusedWitness, Witness>, AccusedWitnessImpl>();
+}
