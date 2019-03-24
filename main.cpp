@@ -1,10 +1,10 @@
 #include <fruit/fruit.h>
-#include "prosecutionCouncil.h"
+#include "defenseCouncil.h"
 
 int main()
 {
-    fruit::Injector<fruit::Annotated<ProsecutionCouncil, Council>> injector(getProsecutionCouncilComponent);
-    Council *prosecutor = injector.get<fruit::Annotated<ProsecutionCouncil, Council *>>();
+    fruit::Injector<fruit::Annotated<DefenseCouncil, Council>> injector(getDefenseCouncilComponent);
+    Council *defense = injector.get<fruit::Annotated<DefenseCouncil, Council *>>();
 
-    prosecutor->presentEvidence();
+    defense->presentEvidence();
 }
