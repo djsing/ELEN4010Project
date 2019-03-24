@@ -11,6 +11,4 @@ public:
   virtual void adjourn() = 0;
 };
 
-fruit::Component<> getCourtComponent();
-
 #endif

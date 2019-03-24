@@ -3,7 +3,7 @@
 
 int main()
 {
-    fruit::Injector<> injector(getCourtComponent);
-    std::vector<Court *> courtHouse = injector.getMultibindings<Court>();
-    courtHouse.at(0)->begin();
+    // fruit::Injector<> injector(getCourtComponent);
+    // std::vector<Court *> courtHouse = injector.getMultibindings<Court>();
+    // courtHouse.at(0)->begin();
 }
