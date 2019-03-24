@@ -30,8 +30,7 @@
             "command": "rm",
             "args": [
                 "courthouse.exe"
-            ],
-            "problemMatcher": []
+            ]
         }
     ]
 }
