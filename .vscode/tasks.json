@@ -7,31 +7,29 @@
             "args": [
                 "-g",
                 "-o",
-                "courtroom",
-                "*.cpp",
+                "courthouse",
+                "./courthouse/*.cpp",
                 "--std=c++11",
-                ".\\lib\\libfruit.a",
+                "./lib/libfruit.a",
                 "-I",
-                ".\\include"
+                "./include"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": []
+            }
         },
         {
             "label": "Execute",
             "type": "shell",
-            "command": "./courtroom.exe",
-            "problemMatcher": []
+            "command": "./courthouse.exe"
         },
         {
             "label": "Clean",
             "type": "shell",
             "command": "rm",
             "args": [
-                "courtroom.exe"
+                "courthouse.exe"
             ],
             "problemMatcher": []
         }
