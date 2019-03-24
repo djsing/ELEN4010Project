@@ -1,10 +1,9 @@
 #include <fruit/fruit.h>
-#include "defenseCouncil.h"
+#include "court.h"
 
 int main()
 {
-    fruit::Injector<fruit::Annotated<DefenseCouncil, Council>> injector(getDefenseCouncilComponent);
-    Council *defense = injector.get<fruit::Annotated<DefenseCouncil, Council *>>();
-
-    defense->presentEvidence();
+    fruit::Injector<> injector(getCourtComponent);
+    std::vector<Court *> courtHouse = injector.getMultibindings<Court>();
+    courtHouse.at(0)->begin();
 }

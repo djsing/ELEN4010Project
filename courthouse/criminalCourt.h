@@ -5,10 +5,11 @@
 
 class CriminalCourt : public Court
 {
-  public:
-    virtual void begin() override;
-    virtual void recess() override;
-    virtual void adjourn() override;
+public:
+  INJECT(CriminalCourt()) = default;
+  virtual void begin() override;
+  virtual void recess() override;
+  virtual void adjourn() override;
 };
 
 #endif

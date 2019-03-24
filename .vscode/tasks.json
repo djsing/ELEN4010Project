@@ -1,6 +1,7 @@
 {
     "version": "2.0.0",
-    "tasks": [{
+    "tasks": [
+        {
             "label": "Build",
             "type": "shell",
             "command": "g++",
@@ -22,7 +23,8 @@
         {
             "label": "Execute",
             "type": "shell",
-            "command": "./courthouse.exe"
+            "command": "./courthouse.exe",
+            "problemMatcher": []
         },
         {
             "label": "Clean",
