@@ -7,11 +7,11 @@ class ProsecutionCouncilImpl : public Council
 {
 private:
   Witness *complainant_;
-  Evidence *weapon_;
+  std::unique_ptr<Evidence> weapon_;
   bool calledComplainant_;
 
 public:
-  INJECT(ProsecutionCouncilImpl(ANNOTATED(ComplainantWitness, Witness *) complainant)) : complainant_(complainant), calledComplainant_(false)
+  INJECT(ProsecutionCouncilImpl(ANNOTATED(ComplainantWitness, Witness *) complainant, EvidenceFactory evidencefactory)) : complainant_(complainant), weapon_(evidencefactory("gun")), calledComplainant_(false)
   {
   }
 
@@ -19,7 +19,7 @@ public:
   {
     std::cout << "The Prosecution presents a ";
     weapon_->name();
-    std::cout << "into evidence." << std::endl;
+    std::cout << " into evidence." << std::endl;
   }
 
   virtual void crossExamineWitness() override
@@ -53,5 +53,5 @@ public:
 
 fruit::Component<fruit::Annotated<ProsecutionCouncil, Council>> getProsecutionCouncilComponent()
 {
-  return fruit::createComponent().bind<fruit::Annotated<ProsecutionCouncil, Council>, ProsecutionCouncilImpl>().install(getComplainantWitnessComponent);
+  return fruit::createComponent().bind<fruit::Annotated<ProsecutionCouncil, Council>, ProsecutionCouncilImpl>().install(getComplainantWitnessComponent).install(getEvidenceComponent);
 }

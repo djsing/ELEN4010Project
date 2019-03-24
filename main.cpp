@@ -1,10 +1,10 @@
 #include <fruit/fruit.h>
-#include "magistrate.h"
+#include "prosecutionCouncil.h"
 
 int main()
 {
-    fruit::Injector<Magistrate> injector(getMagistrateComponent);
-    Magistrate *magistrate = injector.get<Magistrate *>();
+    fruit::Injector<fruit::Annotated<ProsecutionCouncil, Council>> injector(getProsecutionCouncilComponent);
+    Council *prosecutor = injector.get<fruit::Annotated<ProsecutionCouncil, Council *>>();
 
-    magistrate->giveVerdict();
+    prosecutor->presentEvidence();
 }
