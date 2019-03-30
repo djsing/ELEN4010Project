@@ -22,5 +22,5 @@ public:
 
 fruit::Component<fruit::Required<fruit::Component<fruit::Annotated<CriminalCourt, Court>>>, CourtHouse> getCourtHouseComponent()
 {
-  return fruit::createComponent().bind<CourtHouse, CourtHouseImpl>().install(getCriminalCourtComponent);
+  return fruit::createComponent().bind<CourtHouse, CourtHouseImpl>();
 }

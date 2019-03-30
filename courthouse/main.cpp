@@ -1,5 +1,6 @@
 #include <fruit/fruit.h>
 #include "courthouse.h"
+#include "criminalCourt.h"
 #include <iostream>
 
 int main()
@@ -9,6 +10,8 @@ int main()
     int choice;
     std::cin >> choice;
     std::cout << std::endl;
+
+    //fruit::Injector<fruit::Required<fruit::Component<fruit::Annotated<CriminalCourt, Court>>>, CourtHouse> injector(getCourtHouseComponent);
 
     switch (choice)
     {
