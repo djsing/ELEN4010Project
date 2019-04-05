@@ -1,15 +1,14 @@
 {
     "version": "2.0.0",
-    "tasks": [
-        {
+    "tasks": [{
             "label": "Build",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-g",
                 "-o",
-                "courthouse",
-                "./courthouse/*.cpp",
+                "courtroom",
+                "./courtroom/*.cpp",
                 "--std=c++11",
                 "./lib/libfruit.a",
                 "-I",
@@ -23,7 +22,7 @@
         {
             "label": "Execute",
             "type": "shell",
-            "command": "./courthouse.exe",
+            "command": "./courtroom.exe",
             "problemMatcher": []
         },
         {
@@ -31,7 +30,7 @@
             "type": "shell",
             "command": "rm",
             "args": [
-                "courthouse.exe"
+                "courtroom.exe"
             ]
         }
     ]
